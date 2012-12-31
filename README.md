@@ -1,5 +1,7 @@
 package cmdutils
 >    import "github.com/xing4git/cmdutils"
+
+
 <br/>
 <br/>
 
@@ -10,6 +12,8 @@ func BashExecute(cmdstr string) (ret string, err error)
 >   be work. The `cmdstr` will be written to a temp file, and then execute
 >   that file with bash. The output of your command will be returned by this
 >   function.
+
+
 <br/>
 <br/>
 
