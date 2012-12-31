@@ -56,16 +56,18 @@ func pathSeperator() string {
 	return string(runs)
 }
 
+// This function is a wrapper for cmd.Run()
+// Pipe stdout, stderr, stdin of os to stdout, stderr, stdin of cmd
 func Run(cmdname string, params ...string) {
 	cmd := exec.Command(cmdname, params...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin
 	err := cmd.Run()
-	CheckErr(err)
+	checkErr(err)
 }
 
-func CheckErr(err error) {
+func checkErr(err error) {
 	if err != nil {
 		fmt.Errorf("error: %s\n", err.Error())
 		os.Exit(2)
